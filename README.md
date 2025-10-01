@@ -1,35 +1,71 @@
- This is a Kotlin Multiplatform project targeting Android, iOS.
+# 🚀 Rick & Morty App - Kotlin Multiplatform Project
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Este proyecto forma parte del curso impartido por **Aristidevs**, donde desarrollo una aplicación **Kotlin Multiplatform (KMP)** consumiendo la API de Rick & Morty.  
+El objetivo es practicar buenas arquitecturas, uso de librerías modernas y un enfoque **multiplataforma** (Android / iOS).
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-### Build and Run Android Application
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
-
-### Build and Run iOS Application
-
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+## 🎯 Objetivos del proyecto
+- Practicar desarrollo **Kotlin Multiplatform Mobile KMP para android y IOs**.
+- Implementar una arquitectura modular y escalable.
+- Aprender integración de **Koin**, **Ktor**, **Room** y **Paging 3** en un entorno multiplataforma.
+- Construir una app real consumiendo la [Rick & Morty API](https://rickandmortyapi.com).
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## 👨‍💻 Autor
+**Gabriel Colina**  
+Android Developer con +3 años de experiencia.  
+Apasionado por **Kotlin**, **Jetpack Compose** y el desarrollo multiplataforma.
+
+---
+
+## ⚡ Estado del proyecto
+En desarrollo 🚧. Próximamente se incluirán capturas y documentación de la arquitectura.
+
+---
+
+## 🛠️ Tecnologías y librerías utilizadas
+
+## 🔹 Dependency Injection
+- **Koin**
+  - `koin-core`
+  - `koin-android`
+  - `koin-compose`
+  - `koin-compose-viewmodel`
+
+### 🔹 Networking
+- **Ktor Client**
+  - `ktor-client-core`
+  - `ktor-client-content-negotiation`
+  - `ktor-client-okhttp`
+  - `ktor-client-darwin`
+  - `ktor-client-cio`
+  - `ktor-serialization-kotlinx-json`
+
+### 🔹 Arquitectura & State Management
+- **ViewModel (Jetpack Compose)**
+  - `lifecycle-viewmodel-compose`
+
+### 🔹 Imágenes
+- **Coil 3 (con soporte multiplataforma)**
+  - `coil-compose`
+  - `coil-network-ktor`
+
+### 🔹 Paginación
+- **Paging 3 multiplataforma**
+  - `paging-common`
+  - `paging-compose-common`
+
+### 🔹 Fechas
+- **kotlinx-datetime**
+
+### 🔹 Persistencia local
+- **Room**
+  - `room-runtime`
+  - `room-compiler`
+  - `androidx-sqlite-bundled`
+
+### 🔹 Otros
+- **Splash Screen** → `androidx.core:core-splashscreen`
+- **WebView Multiplataforma** → `compose-webview-multiplatform`
