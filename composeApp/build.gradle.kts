@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+
+    alias(libs.plugins.kotlinxSerialization)
+    alias(libs.plugins.kspCompose)
 }
 
 kotlin {
@@ -37,12 +40,33 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.negotiation)
+            implementation(libs.kotlin.serialization)
+
+            implementation(libs.koin.compose)
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
+
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
+
+            implementation(libs.paging.compose.common)
+            implementation(libs.paging.common)
+
+            implementation(libs.kotlinx.datetime)
+
+            implementation(libs.room.runtime)
+            implementation(libs.androidx.sqlite.bundled)
+
+            api(libs.compose.webview.multiplatform)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
         iosMain.dependencies {
-
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
