@@ -33,6 +33,7 @@ kotlinx-coroutines = "1.8.1"
 
 composeWebviewMultiplatform = "1.9.20"
 
+materialIconsCore = "1.7.8"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -88,6 +89,10 @@ core-splashscreen = { group = "androidx.core", name = "core-splashscreen", versi
 
 #WebView
 compose-webview-multiplatform = { module = "io.github.kevinnzou:compose-webview-multiplatform", version.ref = "composeWebviewMultiplatform" }
+
+#Material Icons
+androidx-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "materialIconsCore" }
+androidx-material-iconsCore = { module = "androidx.compose.material:material-icons-core", version.ref = "materialIconsCore" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
