@@ -60,8 +60,8 @@ kotlin {
             implementation(libs.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
 
-          //  implementation(libs.androidx.material.iconsExtended)
-          //  implementation(libs.androidx.material.iconsCore)
+            implementation(compose.materialIconsExtended)
+            implementation(libs.core.splashscreen)
 
             api(libs.compose.webview.multiplatform)
         }
