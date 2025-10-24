@@ -1,15 +1,21 @@
 package com.gcolina.rickandmortykmparis.ui.home
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusModifier
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.savedstate.savedState
 import com.gcolina.rickandmortykmparis.ui.core.navigation.bottomnavigation.BottomBarItem
+import com.gcolina.rickandmortykmparis.ui.core.navigation.bottomnavigation.navigationBottomWrapper.NavigationBottomWrapper
 
 @Composable
 fun HomeScreen() {
@@ -18,6 +24,9 @@ fun HomeScreen() {
     val navController = rememberNavController()
 
     Scaffold(bottomBar = { BottomNavigation(items, navController) }) {
+        Box {
+            NavigationBottomWrapper(navController)
+        }
 
     }
 
@@ -34,8 +43,18 @@ fun BottomNavigation(items: List<BottomBarItem>, navController: NavHostControlle
             NavigationBarItem(
                 icon = itemNavigation.icon,
                 selected = currentDestination?.hierarchy?.any { it.route == itemNavigation.route } == true,
+                label = { Text(itemNavigation.title) },
+                alwaysShowLabel = false,
                 onClick = {
-
+                    navController.navigate(route = itemNavigation.route) {
+                        navController.graph.startDestinationRoute?.let { route ->
+                            popUpTo(route) {
+                                saveState = true
+                            }
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
                 }
             )
         }

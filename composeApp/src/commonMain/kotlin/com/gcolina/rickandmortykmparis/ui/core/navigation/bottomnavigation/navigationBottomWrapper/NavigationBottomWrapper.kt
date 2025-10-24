@@ -5,20 +5,19 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.gcolina.rickandmortykmparis.ui.core.navigation.Routes
+import com.gcolina.rickandmortykmparis.ui.home.tabs.characters.CharactersScreen
+import com.gcolina.rickandmortykmparis.ui.home.tabs.episodes.EpisodesScreen
 
 @Composable
-fun NavigationBottomWrapper (navController: NavHostController){
+fun NavigationBottomWrapper(navController: NavHostController) {
 
-    NavHost(navController = navController, Routes.Episodes.routes){
+    NavHost(navController = navController, Routes.Episodes.routes) {
 
-        composable(route = Routes.Episodes.routes){
-
-
+        composable(route = Routes.Episodes.routes) {
+            EpisodesScreen()
         }
-        composable(route = Routes.Characters.routes){
-
-
+        composable(route = Routes.Characters.routes) {
+            CharactersScreen()
         }
-
     }
 }
