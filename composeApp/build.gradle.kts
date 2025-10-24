@@ -60,6 +60,9 @@ kotlin {
             implementation(libs.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
 
+            implementation(compose.materialIconsExtended)
+            implementation(libs.core.splashscreen)
+
             api(libs.compose.webview.multiplatform)
         }
         commonTest.dependencies {
