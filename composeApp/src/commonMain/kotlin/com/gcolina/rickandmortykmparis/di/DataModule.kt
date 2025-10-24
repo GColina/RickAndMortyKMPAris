@@ -1,6 +1,8 @@
 package com.gcolina.rickandmortykmparis.di
 
+import com.gcolina.rickandmortykmparis.data.RepositoryImpl
 import com.gcolina.rickandmortykmparis.data.remote.ApiServices
+import com.gcolina.rickandmortykmparis.domain.Repository
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.DefaultRequest
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -31,4 +33,5 @@ val dataModule = module {
         }
     }
     factoryOf(::ApiServices)
+    factory<Repository> { RepositoryImpl(get()) }
 }
