@@ -64,6 +64,7 @@ kotlin {
 
             implementation(compose.materialIconsExtended)
             implementation(libs.core.splashscreen)
+            implementation(libs.viewmodel.compose)
 
             api(libs.compose.webview.multiplatform)
         }
